@@ -17,10 +17,13 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
-
-
+    % create temp variables
+    temp0 = theta(1) - (alpha/m)*sum((X*theta - y).*X(:,1));
+    temp1 = theta(2) - (alpha/m)*sum((X*theta - y).*X(:,2));
+    
+    % update values
+    theta(1,:) = temp0;
+    theta(2,:) = temp1; 
 
 
     % ============================================================
