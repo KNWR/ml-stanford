@@ -27,9 +27,12 @@ for iter = 1:num_iters
     theta(2,:) = temp1; 
 %} 
 
-    % vectorized
-
+    % vectorized - works for multiple
+    theta = theta - alpha*(1/m)*X
     
+
+    delta = (1/m)*(X*theta-y)*X'; %'
+    theta = theta - alpha*delta;
 
 
     % ============================================================
