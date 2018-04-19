@@ -31,9 +31,9 @@ for iter = 1:num_iters
     theta = theta - alpha*(1/m)*X
     
 
-    delta = (1/m)*(X*theta-y)*X'; %'
+    delta = (1/m)*X'*(X*theta-y); %' X' has to be before'
     theta = theta - alpha*delta;
-
+    
 
     % ============================================================
 
