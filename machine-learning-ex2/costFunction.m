@@ -20,11 +20,15 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-h = sigmoid(theta'*X); % h(x) = g(theta-transpose * x)
+h = sigmoid(X*theta); % not using ' for transpose b/c way the matrices are constructed for us here
 
-J = (1/m)*(-y*log(h)-(1-y)*log(1-h)) % check that the dimensions work out
-grad = (1/m)*X'*(h-y); % X' stands in for x at j -- take the transpose; 
-% don't use sigma/sum b/c the OG math func in slides will also produce a series of values - which we put in a vector here !!! and the matrix multiplication effectively gives us the sum anyway : ) 
+J = (1/m)*(-y'*log(h)-(1-y)'*log(1-h)); % check that the dimensions work out
+grad = (1/m)*X'*(h-y); % X' stands in for x at j -- take the transpose; don't use sigma/sum b/c the OG math func in slides will also produce a series of values - which we put in a vector here !!! and the matrix multiplication effectively gives us the sum anyway : ) 
+
+
+
+
+
 
 
 

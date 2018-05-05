@@ -10,7 +10,8 @@ g = zeros(size(z));
 %               vector or scalar).
 
 g = 1./(1+exp(-z)); % ./ will divide each element of the vector element-wise
-% 1 ./ => so given vector 1+exp(-z), for each element, we'll divide 1 by the elements of that vector, creating a new vector
+% 1 ./ => so given vector 1+exp(-z), for each element, we divide 1 by the elements of that vector, creating a new vector
+
 
 
 % =============================================================
