@@ -30,10 +30,18 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+% X is m*n+1
+% all_theta is num_labels * n+1
+%p is m*1
 
+% sigmoid(X*all_theta') is m*num_labels 
+% want col vector of where each entry is index of maximum # (probability) in the corresponding row of above
 
-
-
+probabilities = sigmoid(X*all_theta')
+[Y, I] = max(probabilities, [], 2);
+p = I; % this tripped me up -- have to return the col vec. notice if don't have this line and ...
+% ... remove semicolon from previous, Y and then I are both printed to scrn, ie returned
+% just want to set p = I
 
 
 % =========================================================================
