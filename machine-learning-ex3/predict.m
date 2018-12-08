@@ -41,7 +41,13 @@ a2 = [ones(q, 1) sigmoid(z2)]; %
 z3 = a2 * Theta2';
 
 % 
-h = sigmoid(z3);
+h = sigmoid(z3); 
+
+%M = max(A,[],dim) returns the largest elements along dimension dim. 
+% For example, if A is a matrix, then max(A,[],2) is a column vector 
+% containing the maximum value of each row.
+
+% we take I because I is the index?
 
 [Y, I] = max(h, [], 2);
 p = I;
