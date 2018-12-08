@@ -22,12 +22,29 @@ p = zeros(size(X, 1), 1);
 %
 
 
+% recall: theta1 is 25 x 401
+% x is m x 400
 
+% add column of ones to the data matrix 
+a1 = [ones(m, 1) X]; % a is m x 401
 
+% transpose theta1 so it's m x 401 * 401 x 25
+z2 = a1 * Theta1'; % z is m x 25
 
+% useful value pt ii -> q is the no. rows 
+q = size(z2, 1);
 
+% add column of ones -> m x 26
+a2 = [ones(q, 1) sigmoid(z2)]; % 
 
+% m x 26 * 26 x num_labels -> m x num_labels
+z3 = a2 * Theta2';
 
+% 
+h = sigmoid(z3);
+
+[Y, I] = max(h, [], 2);
+p = I;
 
 % =========================================================================
 
